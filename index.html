@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Safe Calculator</title>
+    <link type="text/css" rel="stylesheet" href="pages/css/main.css">
+    </head>
+
+<body>
+    <div class="dog" type="button">
+    <img src="images/dog.png" height="1000">
+    </div>
+    <div class="hint">
+    <h3>Hint:</h3>
+        <p>Use comas to get the Average.</p>
+    </div>
+    <img src="images/safe.png">
+<div class="keypad">
+<form class="pad" name="pad">
+    
+    <table align="center">
+    <tr><th colspan="4"><input class="field" type="text" name="input" Size="64" placeholder="Enter the Combination"></th></tr>
+    <tr><td><input class="btn" type="button" name="ac" value="AC" onClick="pad.input.value = ' '"></td>
+        <td><input class="btn" type="button" name="Avg" value="Avg" onClick="pad.input.value = avg()"></td>
+<td><input class="btn" type="button" name="coma" value="," onClick="pad.input.value += ','"></td>
+        <td><input class="btn" type="button" name="divide" value="/" onClick="pad.input.value += '/'"></td>
+    </tr>
+    <tr>
+        <td><input class="btn" type="button" name="seven" value="7" onClick="pad.input.value += '7'"></td>
+        <td><input class="btn" type="button" name="eight" value="8" onClick="pad.input.value += '8'"></td>
+        <td><input class="btn" type="button" name="nine" value="9" onClick="pad.input.value += '9'"></td>
+        <td><input class="btn" type="button" name="multiplicate" value="*" onClick="pad.input.value += '*'"></td>
+    </tr>
+    <tr><td><input class="btn" type="button" name="four" value="4" onClick="pad.input.value += '4'"></td>
+        <td><input class="btn" type="button" name="five" value="5" onClick="pad.input.value += '5'"></td>
+        <td><input class="btn" type="button" name="six" value="6" onClick="pad.input.value += '6'"></td>
+        <td><input class="btn" type="button" name="plus" value="+" onClick="pad.input.value += '+'"></td>
+    </tr>
+    <tr><td><input class="btn" type="button" name="one" value="1" onClick="pad.input.value += '1'"></td>
+        <td><input class="btn" type="button" name="two" value="2" onClick="pad.input.value += '2'"></td>
+        <td><input class="btn" type="button" name="three" value="3" onClick="pad.input.value += '3'"></td>
+        <td><input class="btn" type="button" name="minus" value="-" onClick="pad.input.value += '-'"></td>
+    </tr>
+    <tr><td colspan="2"><input class="btn" type="button" name="zero" value="0" onClick="pad.input.value += '0'"></td>
+        <td><input class="btn" type="button" name="decimal" value="." onClick="pad.input.value += '.'"></td>
+        <td rowspan=""><input class="btn" type="button" name="equal"  value="=" onClick="pad.input.value = eval(pad.input.value)"></td>
+    </tr>
+
+</table>
+    
+    </form>
+
+
+</div>
+       <script>
+    
+    function avg() {
+	var input = pad.input.value;
+	var arr = input.split(",");
+	var avg = 0;
+			for (var i = 0; i < arr.length; i++) {
+				avg += Number(arr[i]);
+			}
+			return avg/arr.length;
+}
+        
+</script>
+    </body>
+    
+</html>
